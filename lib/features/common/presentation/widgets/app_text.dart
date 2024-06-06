@@ -9,12 +9,12 @@ class AppText extends StatelessWidget {
   final String fontColor;
 
   const AppText({
-    Key? key,
+    super.key,
     required this.title,
     this.textAlign,
     this.fontSize,
     required this.fontColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -56,7 +56,7 @@ class LanguageSelectionPageState extends State<LanguageSelectionPage> {
           ..._suggestedLanguages.map((language) => Theme(
                 data: Theme.of(context).copyWith(
                   unselectedWidgetColor:
-                      Color(0xFFF5F5F8), // Set unselected color
+                      const Color(0xFFF5F5F8), // Set unselected color
                 ),
                 child: RadioListTile(
                   title: Text(
@@ -95,7 +95,7 @@ class LanguageSelectionPageState extends State<LanguageSelectionPage> {
           ..._otherLanguages.map((language) => Theme(
                 data: Theme.of(context).copyWith(
                   unselectedWidgetColor:
-                      Color(0xFFFFFFFF), // Set unselected color
+                      const Color(0xFFFFFFFF), // Set unselected color
                 ),
                 child: RadioListTile(
                   title: Text(

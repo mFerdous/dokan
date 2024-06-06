@@ -13,14 +13,14 @@ class AppButton extends StatelessWidget {
   final Color? color;
 
   const AppButton({
-    Key? key,
+    super.key,
     required this.title,
     this.onTap,
     required this.width,
     required this.height,
     this.isDisabled = false,
     this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class AppButton extends StatelessWidget {
               fontWeight: FontWeight.w500,
               fontSize: 14,
               color: Colors.white,
-              fontFamily: 'Urbanist',
+              fontFamily: 'Roboto',
             ),
           ),
         ),

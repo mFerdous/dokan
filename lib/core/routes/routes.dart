@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../features/sign_in/presentation/pages/sign_in_page.dart';
+import '../../features/sign_up/presentation/pages/sign_up_page.dart';
 
 class AppRoute {
   Route? onGenerateRoute(RouteSettings routeSettings) {
@@ -22,13 +23,13 @@ class AppRoute {
 
   static MaterialPageRoute _getInitialRoute() {
     return _routeBuilder(
-      const SignInPage(),
+      const SignUpPage(),
     );
   }
 
   static MaterialPageRoute _signUpPageRoute() {
     return _routeBuilder(
-      const SignInPage(),
+      const SignUpPage(),
     );
   }
 
