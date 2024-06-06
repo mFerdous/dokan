@@ -59,17 +59,17 @@ class SignUpPageState extends State<SignUpPage> {
                   width: 308.68,
                   height: 61.11,
                   color: const Color(0xFFF75F55),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/sign_in_page');
+                  },
                 ),
                 SizedBox(
                   height: getProportionateScreenHeight(39.89),
                 ),
-                // Social Media Login Buttons
                 const SocialSignUp(),
                 SizedBox(
                   height: getProportionateScreenHeight(52.43),
                 ),
-                // Login Redirect
                 const AlreadyUserLogin(),
                 SizedBox(
                   height: getProportionateScreenWidth(54.57),
@@ -85,7 +85,7 @@ class SignUpPageState extends State<SignUpPage> {
   Widget _buildNameTextField() {
     return const AppTextField(
       labelText: 'Name',
-      iconAssetPath: 'assets/images/person.svg',
+      prefixIconAssetPath: 'assets/images/person.svg',
       keyboardType: TextInputType.name,
       textInputAction: TextInputAction.next,
       cursorHeight: 20.35,
@@ -101,7 +101,7 @@ class SignUpPageState extends State<SignUpPage> {
   Widget _buildEmailTextField() {
     return const AppTextField(
       labelText: 'Email',
-      iconAssetPath: 'assets/images/email.svg',
+      prefixIconAssetPath: 'assets/images/email.svg',
       keyboardType: TextInputType.emailAddress,
       textInputAction: TextInputAction.next,
       cursorHeight: 20.35,
@@ -117,7 +117,7 @@ class SignUpPageState extends State<SignUpPage> {
   Widget _buildPasswordTextField() {
     return const AppTextField(
       labelText: 'Password',
-      iconAssetPath: 'assets/images/lock.svg',
+      prefixIconAssetPath: 'assets/images/lock.svg',
       keyboardType: TextInputType.text,
       textInputAction: TextInputAction.next,
       cursorHeight: 20.35,
@@ -134,7 +134,7 @@ class SignUpPageState extends State<SignUpPage> {
   Widget _buildConfirmPasswordTextField() {
     return const AppTextField(
       labelText: 'Confirm Password',
-      iconAssetPath: 'assets/images/lock.svg',
+      prefixIconAssetPath: 'assets/images/lock.svg',
       keyboardType: TextInputType.text,
       textInputAction: TextInputAction.done,
       cursorHeight: 20.35,

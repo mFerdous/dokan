@@ -6,7 +6,8 @@ import '../../../../core/utils/size_config.dart';
 
 class AppTextField extends StatelessWidget {
   final String labelText;
-  final String iconAssetPath;
+  final String prefixIconAssetPath;
+  final String? suffixIconAssetPath;
   final TextInputType keyboardType;
   final TextInputAction textInputAction;
   final double cursorHeight;
@@ -16,7 +17,8 @@ class AppTextField extends StatelessWidget {
   const AppTextField({
     super.key,
     required this.labelText,
-    required this.iconAssetPath,
+    required this.prefixIconAssetPath,
+    this.suffixIconAssetPath,
     this.keyboardType = TextInputType.text,
     this.textInputAction = TextInputAction.done,
     this.cursorHeight = 20.0,
@@ -60,11 +62,24 @@ class AppTextField extends StatelessWidget {
               width: getProportionateScreenWidth(17.86),
               height: getProportionateScreenHeight(22.32),
               child: SvgPicture.asset(
-                iconAssetPath,
+                prefixIconAssetPath,
                 color: const Color(0xFF7C8592),
               ),
             ),
           ),
+          suffixIcon: suffixIconAssetPath != null
+              ? Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: SizedBox(
+                    width: getProportionateScreenWidth(17.86),
+                    height: getProportionateScreenHeight(22.32),
+                    child: SvgPicture.asset(
+                      suffixIconAssetPath!,
+                      color: const Color(0xFF7C8592),
+                    ),
+                  ),
+                )
+              : null,
           labelText: labelText,
           labelStyle: GoogleFonts.getFont(
             'Roboto',
