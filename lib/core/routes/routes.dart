@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../features/profile/presentation/pages/profile_page.dart';
 import '../../features/sign_in/presentation/pages/sign_in_page.dart';
 import '../../features/sign_up/presentation/pages/sign_up_page.dart';
 
@@ -12,6 +13,8 @@ class AppRoute {
         return _signUpPageRoute();
       case '/sign_in_page':
         return _signInPageRoute();
+      case '/profile_page':
+        return _profilePageRoute();
       default:
         return null;
     }
@@ -36,6 +39,12 @@ class AppRoute {
   static MaterialPageRoute _signInPageRoute() {
     return _routeBuilder(
       const SignInPage(),
+    );
+  }
+
+  static MaterialPageRoute _profilePageRoute() {
+    return _routeBuilder(
+      const ProfilePage(),
     );
   }
 }

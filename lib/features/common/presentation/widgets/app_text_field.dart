@@ -5,31 +5,33 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/utils/size_config.dart';
 
 class AppTextField extends StatelessWidget {
-  final String labelText;
+  final String? labelText;
+  final String? hintText;
   final String prefixIconAssetPath;
   final String? suffixIconAssetPath;
   final TextInputType keyboardType;
   final TextInputAction textInputAction;
   final double cursorHeight;
   final bool obscureText;
-  final TextStyle textStyle;
+  final double? fontSize;
+  final FontWeight? fontWeight;
+  final double? height;
+  final double? letterSpacing;
 
   const AppTextField({
     super.key,
-    required this.labelText,
+    this.labelText,
+    this.hintText,
     required this.prefixIconAssetPath,
     this.suffixIconAssetPath,
     this.keyboardType = TextInputType.text,
     this.textInputAction = TextInputAction.done,
     this.cursorHeight = 20.0,
     this.obscureText = false,
-    this.textStyle = const TextStyle(
-      fontFamily: 'Roboto',
-      fontSize: 17.36,
-      fontWeight: FontWeight.w400,
-      height: 1,
-      letterSpacing: 0.15782825648784637,
-    ),
+    this.fontSize,
+    this.fontWeight,
+    this.height,
+    this.letterSpacing,
   });
 
   @override
@@ -54,7 +56,13 @@ class AppTextField extends StatelessWidget {
         keyboardType: keyboardType,
         cursorHeight: cursorHeight,
         obscureText: obscureText,
-        style: textStyle,
+        style: TextStyle(
+          fontFamily: 'Roboto',
+          fontSize: fontSize ?? 17.36,
+          fontWeight: fontWeight ?? FontWeight.w400,
+          height: height ?? 1,
+          letterSpacing: letterSpacing ?? 0.15782825648784637,
+        ),
         decoration: InputDecoration(
           prefixIcon: Padding(
             padding: const EdgeInsets.all(12.0),
@@ -63,7 +71,10 @@ class AppTextField extends StatelessWidget {
               height: getProportionateScreenHeight(22.32),
               child: SvgPicture.asset(
                 prefixIconAssetPath,
-                color: const Color(0xFF7C8592),
+                colorFilter: const ColorFilter.mode(
+                  Color(0xFF7C8592),
+                  BlendMode.srcIn,
+                ),
               ),
             ),
           ),
@@ -75,13 +86,24 @@ class AppTextField extends StatelessWidget {
                     height: getProportionateScreenHeight(22.32),
                     child: SvgPicture.asset(
                       suffixIconAssetPath!,
-                      color: const Color(0xFF7C8592),
+                      colorFilter: const ColorFilter.mode(
+                        Color(0xFF7C8592),
+                        BlendMode.srcIn,
+                      ),
                     ),
                   ),
                 )
               : null,
           labelText: labelText,
           labelStyle: GoogleFonts.getFont(
+            'Roboto',
+            fontWeight: FontWeight.w400,
+            fontSize: 17.4,
+            letterSpacing: 0.2,
+            color: const Color(0xFFA4A9AF),
+          ),
+          hintText: hintText,
+          hintStyle: GoogleFonts.getFont(
             'Roboto',
             fontWeight: FontWeight.w400,
             fontSize: 17.4,

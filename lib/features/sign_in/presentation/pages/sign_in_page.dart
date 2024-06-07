@@ -1,9 +1,9 @@
 import 'package:dokan/features/common/presentation/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/utils/size_config.dart';
+import '../../../common/presentation/widgets/app_text.dart';
 import '../../../common/presentation/widgets/app_text_field.dart';
 import '../widget/social_sign_in_widget.dart';
 
@@ -37,17 +37,14 @@ class SignInPageState extends State<SignInPage> {
                 SizedBox(
                   height: getProportionateScreenHeight(83.15),
                 ),
-                Container(
-                  margin: const EdgeInsets.fromLTRB(1.2, 0, 0, 41),
-                  child: Text(
-                    'Sign In',
-                    style: GoogleFonts.getFont(
-                      'Roboto',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 25,
-                      color: Color(0xFF000000),
-                    ),
-                  ),
+                const AppText(
+                  title: 'Sign In',
+                  fontSize: 25,
+                  fontWeight: FontWeight.w700,
+                  fontColor: Color(0xFF000000),
+                ),
+                SizedBox(
+                  height: getProportionateScreenHeight(41),
                 ),
                 _buildEmailTextField(),
                 SizedBox(
@@ -57,28 +54,27 @@ class SignInPageState extends State<SignInPage> {
                 SizedBox(
                   height: getProportionateScreenHeight(18.33),
                 ),
-                Container(
-                  margin: const EdgeInsets.fromLTRB(1.4, 0, 1.4, 60.7),
-                  child: Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      'Forgot Password?',
-                      style: GoogleFonts.getFont(
-                        'Roboto',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13,
-                        letterSpacing: 0.1,
-                        color: Color(0xFFA4A9AF),
-                      ),
-                    ),
+                const Align(
+                  alignment: Alignment.topRight,
+                  child: AppText(
+                    title: 'Forgot Password?',
+                    fontSize: 13,
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 0.1,
+                    fontColor: Color(0xFFA4A9AF),
                   ),
+                ),
+                SizedBox(
+                  height: getProportionateScreenHeight(60.7),
                 ),
                 AppButton(
                   title: 'Sign In',
                   width: 308.68,
                   height: 61.11,
                   color: const Color(0xFFF75F55),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/profile_page');
+                  },
                 ),
                 SizedBox(
                   height: getProportionateScreenHeight(39.89),
@@ -90,16 +86,15 @@ class SignInPageState extends State<SignInPage> {
                 SizedBox(
                   height: getProportionateScreenHeight(21),
                   child: InkWell(
-                    onTap: () {},
-                    child: Text(
-                      'Create New Account',
-                      style: GoogleFonts.getFont(
-                        'Roboto',
-                        fontWeight: FontWeight.w300,
-                        fontSize: 17.36,
-                        letterSpacing: 0.15782825648784637,
-                        color: const Color(0xFF383C40),
-                      ),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/sign_up_page');
+                    },
+                    child: const AppText(
+                      title: 'Create New Account',
+                      fontSize: 17.36,
+                      fontWeight: FontWeight.w300,
+                      letterSpacing: 0.15782825648784637,
+                      fontColor: Color(0xFF383C40),
                     ),
                   ),
                 ),
@@ -121,12 +116,9 @@ class SignInPageState extends State<SignInPage> {
       keyboardType: TextInputType.emailAddress,
       textInputAction: TextInputAction.next,
       cursorHeight: 20.35,
-      textStyle: TextStyle(
-        fontFamily: 'Roboto',
-        fontSize: 17.36,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.15782825648784637,
-      ),
+      fontSize: 17.36,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 0.15782825648784637,
     );
   }
 
@@ -139,12 +131,9 @@ class SignInPageState extends State<SignInPage> {
       textInputAction: TextInputAction.next,
       cursorHeight: 20.35,
       obscureText: true,
-      textStyle: TextStyle(
-        fontFamily: 'Roboto',
-        fontSize: 17.36,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.15782825648784637,
-      ),
+      fontSize: 17.36,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 0.15782825648784637,
     );
   }
 }

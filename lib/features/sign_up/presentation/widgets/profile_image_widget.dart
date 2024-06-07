@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -33,7 +31,10 @@ class ProfileImageWidget extends StatelessWidget {
             backgroundColor: const Color(0xFFFFFFFF),
             child: SvgPicture.asset(
               'assets/images/person.svg',
-              color: const Color(0xFF7C8592),
+              colorFilter: const ColorFilter.mode(
+                Color(0xFF7C8592),
+                BlendMode.srcIn,
+              ),
             ),
           ),
         ),

@@ -42,7 +42,6 @@ class SignUpPageState extends State<SignUpPage> {
                   height: getProportionateScreenHeight(19.44),
                 ),
                 _buildEmailTextField(),
-
                 SizedBox(
                   height: getProportionateScreenHeight(19.44),
                 ),
@@ -89,12 +88,9 @@ class SignUpPageState extends State<SignUpPage> {
       keyboardType: TextInputType.name,
       textInputAction: TextInputAction.next,
       cursorHeight: 20.35,
-      textStyle: TextStyle(
-        fontFamily: 'Roboto',
-        fontSize: 17.36,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.15782825648784637,
-      ),
+      fontSize: 17.36,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 0.15782825648784637,
     );
   }
 
@@ -105,12 +101,9 @@ class SignUpPageState extends State<SignUpPage> {
       keyboardType: TextInputType.emailAddress,
       textInputAction: TextInputAction.next,
       cursorHeight: 20.35,
-      textStyle: TextStyle(
-        fontFamily: 'Roboto',
-        fontSize: 17.36,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.15782825648784637,
-      ),
+      fontSize: 17.36,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 0.15782825648784637,
     );
   }
 
@@ -122,12 +115,9 @@ class SignUpPageState extends State<SignUpPage> {
       textInputAction: TextInputAction.next,
       cursorHeight: 20.35,
       obscureText: true,
-      textStyle: TextStyle(
-        fontFamily: 'Roboto',
-        fontSize: 17.36,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.15782825648784637,
-      ),
+      fontSize: 17.36,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 0.15782825648784637,
     );
   }
 
@@ -139,12 +129,9 @@ class SignUpPageState extends State<SignUpPage> {
       textInputAction: TextInputAction.done,
       cursorHeight: 20.35,
       obscureText: true,
-      textStyle: TextStyle(
-        fontFamily: 'Roboto',
-        fontSize: 17.36,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 0.15782825648784637,
-      ),
+      fontSize: 17.36,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 0.15782825648784637,
     );
   }
 }

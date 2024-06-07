@@ -10,7 +10,11 @@ class AppButton extends StatelessWidget {
   final double width;
   final double height;
   final bool isDisabled;
+  final FontWeight? fontWeight;
+  final double? fontSize;
   final Color? color;
+  final Color? fontColor;
+  final Color? borderColor;
 
   const AppButton({
     super.key,
@@ -19,7 +23,11 @@ class AppButton extends StatelessWidget {
     required this.width,
     required this.height,
     this.isDisabled = false,
+    this.fontWeight,
+    this.fontSize,
     this.color,
+    this.fontColor,
+    this.borderColor,
   });
 
   @override
@@ -30,18 +38,19 @@ class AppButton extends StatelessWidget {
         width: getProportionateScreenWidth(width),
         height: getProportionateScreenHeight(height),
         decoration: BoxDecoration(
-            color: isDisabled
-                ? color ?? primary.withOpacity(0.5)
-                : color ?? primary,
-            borderRadius: BorderRadius.circular(8.0)),
+          color:
+              isDisabled ? color ?? primary.withOpacity(0.5) : color ?? primary,
+          border: Border.all(color: borderColor ?? Colors.transparent),
+          borderRadius: BorderRadius.circular(8.0),
+        ),
         child: Center(
           child: Text(
             AppLocalizations.of(context).translate(title),
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontWeight: FontWeight.w500,
-              fontSize: 14,
-              color: Colors.white,
+            style: TextStyle(
+              fontWeight: fontWeight ?? FontWeight.w500,
+              fontSize: fontSize ?? 14,
+              color: fontColor ?? Colors.white,
               fontFamily: 'Roboto',
             ),
           ),
