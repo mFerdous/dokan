@@ -10,6 +10,7 @@ class AppText extends StatelessWidget {
   final FontWeight? fontWeight;
   final double? letterSpacing;
   final Color? fontColor;
+  final bool lineThrough;
 
   const AppText({
     super.key,
@@ -19,6 +20,7 @@ class AppText extends StatelessWidget {
     this.fontWeight,
     this.letterSpacing,
     this.fontColor,
+    this.lineThrough = false,
   });
 
   @override
@@ -32,6 +34,7 @@ class AppText extends StatelessWidget {
         fontWeight: fontWeight ?? FontWeight.normal,
         letterSpacing: letterSpacing ?? 0,
         color: fontColor ?? const Color(0xFF000000),
+        decoration: lineThrough ? TextDecoration.lineThrough : null,
       ),
     );
   }

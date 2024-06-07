@@ -2,6 +2,11 @@ import 'package:dokan/core/utils/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../profile/presentation/pages/profile_page.dart';
+import 'cart_page.dart';
+import 'home_page.dart';
+import 'menu_page.dart';
+
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
 
@@ -18,13 +23,27 @@ class _LandingPageState extends State<LandingPage> {
     });
   }
 
+  Widget _getSelectedPage() {
+    switch (_selectedIndex) {
+      case 0:
+        return const HomePage();
+      case 1:
+        return const MenuPage();
+      case 2:
+        return const CartPage();
+      case 3:
+        return const ProfilePage();
+      default:
+        return const HomePage();
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      body: Center(
-        child: Text('Selected Index: $_selectedIndex'),
-      ),
+      body: _getSelectedPage(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Container(
         width: getProportionateScreenWidth(56),

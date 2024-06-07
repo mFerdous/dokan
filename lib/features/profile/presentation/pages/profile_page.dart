@@ -19,23 +19,21 @@ class _ProfilePageState extends State<ProfilePage> {
     SizeConfig().init(context);
     return Scaffold(
       backgroundColor: const Color(0xFFF8F8FA),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFF8F8FA),
+        title: const AppText(
+          title: 'My Account',
+          fontSize: 22.6,
+          fontWeight: FontWeight.w700,
+          fontColor: Color(0xFF222455),
+        ),
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 22),
           child: Column(
             children: [
-              SizedBox(
-                height: getProportionateScreenHeight(64),
-              ),
-              SizedBox(
-                height: getProportionateScreenHeight(26),
-                child: const AppText(
-                  title: 'My Account',
-                  fontSize: 22.6,
-                  fontWeight: FontWeight.w700,
-                  fontColor: Color(0xFF222455),
-                ),
-              ),
               SizedBox(
                 height: getProportionateScreenHeight(40),
               ),
@@ -191,11 +189,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceAround,
                                     children: [
                                       AppButton(
                                         title: 'Cancel',
-                                        width: getProportionateScreenWidth(135),
+                                        width: getProportionateScreenWidth(130),
                                         height:
                                             getProportionateScreenHeight(50),
                                         color: Colors.transparent,
@@ -206,7 +204,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       ),
                                       AppButton(
                                         title: 'save',
-                                        width: getProportionateScreenWidth(135),
+                                        width: getProportionateScreenWidth(130),
                                         height:
                                             getProportionateScreenHeight(50),
                                         color: Color(0xFF1ABC9C),
