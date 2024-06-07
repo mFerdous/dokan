@@ -16,6 +16,8 @@ class AppRoute {
         return _signInPageRoute();
       case '/profile_page':
         return _profilePageRoute();
+      case '/landing_page':
+        return _landingPageRoute();
       default:
         return null;
     }
@@ -46,6 +48,12 @@ class AppRoute {
   static MaterialPageRoute _profilePageRoute() {
     return _routeBuilder(
       const ProfilePage(),
+    );
+  }
+
+  static MaterialPageRoute _landingPageRoute() {
+    return _routeBuilder(
+      const LandingPage(),
     );
   }
 }

@@ -25,4 +25,6 @@ final bnTranslations = {
   "type_your_password": "আপনার পাসওয়ার্ড টাইপ করুন",
   "email_id_required": "ইমেইল আইডি প্রয়োজন",
   "invalid_email_id": "ত্রুটিপূর্ণ ইমেল আইডি",
+  "sign-in_pass_req": "Password required",
+  "password_invalid": "Password must be 6 carecter",
 };

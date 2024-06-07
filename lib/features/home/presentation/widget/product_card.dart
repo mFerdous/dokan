@@ -1,13 +1,22 @@
-import 'package:dokan/core/utils/size_config.dart';
-import 'package:dokan/features/common/presentation/widgets/app_text.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+
 import 'package:flutter/material.dart';
 
+import 'package:dokan/core/utils/size_config.dart';
+import 'package:dokan/features/common/presentation/widgets/app_text.dart';
+
+import '../../data/model/product.dart';
+
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  final Product product;
+
+  const ProductCard({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    const int ratingCount = 4;
     SizeConfig().init(context);
     return Card(
       color: const Color(0xFFFFFFFF),
@@ -24,7 +33,8 @@ class ProductCard extends StatelessWidget {
               topRight: Radius.circular(8.0),
             ),
             child: Image.network(
-              'https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+              product.permalink ??
+                  'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930',
               height: getProportionateScreenHeight(177),
               width: double.infinity,
               fit: BoxFit.cover,
@@ -35,8 +45,8 @@ class ProductCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const AppText(
-                  title: 'Girls Stylish Dresses...',
+                AppText(
+                  title: product.name,
                   fontSize: 13.89,
                   fontWeight: FontWeight.w400,
                   letterSpacing: 0.14,
@@ -46,8 +56,8 @@ class ProductCard extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    const AppText(
-                        title: '\$150',
+                    AppText(
+                        title: '\$${product.regularPrice}',
                         lineThrough: true,
                         fontColor: Color(0xFF989FA8),
                         fontSize: 15,
@@ -56,8 +66,8 @@ class ProductCard extends StatelessWidget {
                     SizedBox(
                       width: getProportionateScreenWidth(8.0),
                     ),
-                    const AppText(
-                        title: '\$79',
+                    AppText(
+                        title: '\$${product.price}',
                         fontColor: Color(0xFF000000),
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
@@ -73,7 +83,7 @@ class ProductCard extends StatelessWidget {
                     (index) {
                       return Icon(
                         Icons.star,
-                        color: index < ratingCount
+                        color: index < double.parse(product.averageRating)
                             ? Colors.amber
                             : const Color(0xFFD3D8E5),
                         size: 14,
@@ -81,16 +91,6 @@ class ProductCard extends StatelessWidget {
                     },
                   ),
                 ),
-
-                // Row(
-                //   children: [
-                //     Icon(Icons.star, color: Colors.amber, size: 14),
-                //     Icon(Icons.star, color: Colors.amber, size: 14),
-                //     Icon(Icons.star, color: Colors.amber, size: 14),
-                //     Icon(Icons.star, color: Colors.amber, size: 14),
-                //     Icon(Icons.star, color: Color(0xFFD3D8E5), size: 14),
-                //   ],
-                // ),
               ],
             ),
           ),

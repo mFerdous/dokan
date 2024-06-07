@@ -25,4 +25,6 @@ final enTranslations = {
   "type_your_password": "Type your password",
   "email_id_required": "Email id required",
   "invalid_email_id": "Invalid email id",
+  "sign-in_pass_req": "Password required",
+  "password_invalid": "Password must be 6 carecter",
 };

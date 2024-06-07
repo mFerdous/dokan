@@ -23,4 +23,5 @@ class ErrorMsgRes {
 
   static const kNoMessageFound = 'No message found from server';
   static const kServerError = 'common_server_error';
+  static const kPasswordInvalid = 'password_invalid';
 }
