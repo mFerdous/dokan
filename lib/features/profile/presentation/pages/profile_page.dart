@@ -128,7 +128,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       child: AppText(
                                         title: 'Email',
                                         fontColor:
-                                            Color(0xFF263238).withOpacity(0.56),
+                                            const Color(0xFF263238).withOpacity(0.56),
                                         fontSize: 16,
                                         fontWeight: FontWeight.w400,
                                       ),
@@ -141,7 +141,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       child: AppText(
                                         title: 'Full Name',
                                         fontColor:
-                                            Color(0xFF263238).withOpacity(0.56),
+                                            const Color(0xFF263238).withOpacity(0.56),
                                         fontSize: 16,
                                         fontWeight: FontWeight.w400,
                                       ),
@@ -154,7 +154,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       child: AppText(
                                         title: 'Street Address',
                                         fontColor:
-                                            Color(0xFF263238).withOpacity(0.56),
+                                            const Color(0xFF263238).withOpacity(0.56),
                                         fontSize: 16,
                                         fontWeight: FontWeight.w400,
                                       ),
@@ -167,7 +167,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       child: AppText(
                                         title: 'Apt, Suite, Bldg (optional)',
                                         fontColor:
-                                            Color(0xFF263238).withOpacity(0.56),
+                                            const Color(0xFF263238).withOpacity(0.56),
                                         fontSize: 16,
                                         fontWeight: FontWeight.w400,
                                       ),
@@ -180,7 +180,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       child: AppText(
                                         title: 'Zip Code',
                                         fontColor:
-                                            Color(0xFF263238).withOpacity(0.56),
+                                            const Color(0xFF263238).withOpacity(0.56),
                                         fontSize: 16,
                                         fontWeight: FontWeight.w400,
                                       ),
@@ -202,8 +202,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                           height:
                                               getProportionateScreenHeight(50),
                                           color: Colors.transparent,
-                                          fontColor: Color(0xFF607374),
-                                          borderColor: Color(0xFF979797),
+                                          fontColor: const Color(0xFF607374),
+                                          borderColor: const Color(0xFF979797),
                                           fontSize: 17.36,
                                           fontWeight: FontWeight.w700,
                                         ),
@@ -213,7 +213,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                               getProportionateScreenWidth(130),
                                           height:
                                               getProportionateScreenHeight(50),
-                                          color: Color(0xFF1ABC9C),
+                                          color: const Color(0xFF1ABC9C),
                                           fontSize: 17.36,
                                           fontWeight: FontWeight.w700,
                                         ),

@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: _localizationDelegates,
           localeResolutionCallback: localeResolution,
           locale: state.getCurrentLocale(),
-          home: isFirstTime ? SignUpPage() : LandingPage(),
+          home: isFirstTime ? const SignUpPage() : const LandingPage(),
         );
       },
     );

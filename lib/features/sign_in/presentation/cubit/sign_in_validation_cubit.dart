@@ -13,7 +13,7 @@ import 'password_formz.dart';
 part 'sign_in_validation_state.dart';
 
 class SignInValidationCubit extends Cubit<SignInValidationState> {
-  SignInValidationCubit() : super(SignInValidationInitial());
+  SignInValidationCubit() : super(const SignInValidationInitial());
 
   void changeObscureStatus(bool obscureStatus) {
     emit(state.copyWith(obscureStatus: obscureStatus));

@@ -4,7 +4,6 @@ import 'package:dokan/features/common/presentation/widgets/app_button.dart';
 import 'package:dokan/features/sign_in/presentation/cubit/sign_in_cubit.dart';
 import 'package:dokan/features/sign_in/presentation/cubit/sign_in_validation_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -18,8 +17,6 @@ import '../../../common/presentation/widgets/app_loading.dart';
 import '../../../common/presentation/widgets/app_text.dart';
 import '../../../common/presentation/widgets/app_text_field.dart';
 import '../widget/social_sign_in_widget.dart';
-import 'package:html/parser.dart' as htmlparser;
-import 'package:html/dom.dart' as dom;
 
 class SignInPage extends StatefulWidget {
   const SignInPage({
