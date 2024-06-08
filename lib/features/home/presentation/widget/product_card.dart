@@ -1,9 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'package:flutter/material.dart';
-
 import 'package:dokan/core/utils/size_config.dart';
 import 'package:dokan/features/common/presentation/widgets/app_text.dart';
+import 'package:flutter/material.dart';
 
 import '../../data/model/product.dart';
 
