@@ -1,9 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'package:flutter/material.dart';
-
 import 'package:dokan/core/utils/size_config.dart';
 import 'package:dokan/features/common/presentation/widgets/app_text.dart';
+import 'package:flutter/material.dart';
 
 import '../../data/model/product.dart';
 
@@ -11,9 +10,9 @@ class ProductCard extends StatelessWidget {
   final Product product;
 
   const ProductCard({
-    Key? key,
+    super.key,
     required this.product,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +32,7 @@ class ProductCard extends StatelessWidget {
               topRight: Radius.circular(8.0),
             ),
             child: Image.network(
-              product.permalink ??
-                  'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930',
+              product.permalink,
               height: getProportionateScreenHeight(177),
               width: double.infinity,
               fit: BoxFit.cover,
@@ -59,7 +57,7 @@ class ProductCard extends StatelessWidget {
                     AppText(
                         title: '\$${product.regularPrice}',
                         lineThrough: true,
-                        fontColor: Color(0xFF989FA8),
+                        fontColor: const Color(0xFF989FA8),
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
                         letterSpacing: 0.14),
@@ -68,7 +66,7 @@ class ProductCard extends StatelessWidget {
                     ),
                     AppText(
                         title: '\$${product.price}',
-                        fontColor: Color(0xFF000000),
+                        fontColor: const Color(0xFF000000),
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                         letterSpacing: 0.16),

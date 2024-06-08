@@ -15,6 +15,12 @@ import '../../features/sign_in/domain/repository/sign_in_repository.dart';
 import '../../features/sign_in/domain/usecase/sign_in_usecase.dart';
 import '../../features/sign_in/presentation/cubit/sign_in_cubit.dart';
 import '../../features/sign_in/presentation/cubit/sign_in_validation_cubit.dart';
+import '../../features/sign_up/data/remote/sign_up_remote.dart';
+import '../../features/sign_up/data/repository_impl/sign_up_repository_impl.dart';
+import '../../features/sign_up/domain/repository/sign_up_repository.dart';
+import '../../features/sign_up/domain/usecase/sign_up_usecase.dart';
+import '../../features/sign_up/presentation/cubit/sign_up_cubit.dart';
+import '../../features/sign_up/presentation/cubit/sign_up_validation_cubit.dart';
 import '../header_provider/header_provider.dart';
 import '../network/connection_checker.dart';
 
@@ -47,6 +53,25 @@ class Dependency {
 
     sl.registerFactory(() => SignInValidationCubit());
     sl.registerFactory(() => HomeValidationCubit());
+
+//---------------------------Sign Up Start-------------------------------//
+
+    sl.registerLazySingleton<SignUpRemote>(
+      () => SignUpRemoteImpl(sl()),
+    );
+
+    sl.registerLazySingleton<SignUpRepository>(
+      () => SignUpRepositoryImpl(
+        sl(),
+        sl(),
+      ),
+    );
+    sl.registerLazySingleton(() => SignUpUsecase(sl()));
+    sl.registerFactory(() => SignUpCubit(signUpUsecase: sl()));
+
+    sl.registerFactory(() => SignUpValidationCubit());
+
+//---------------------------Sign Up End-------------------------------//
 
 
 
@@ -81,6 +106,12 @@ class Dependency {
     ),
     BlocProvider<SignInApiCubit>(
       create: (context) => Dependency.sl<SignInApiCubit>(),
+    ),
+    BlocProvider<SignUpValidationCubit>(
+      create: (context) => Dependency.sl<SignUpValidationCubit>(),
+    ),
+    BlocProvider<SignUpCubit>(
+      create: (context) => Dependency.sl<SignUpCubit>(),
     ),
   ];
 }

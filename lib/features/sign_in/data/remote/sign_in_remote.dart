@@ -1,7 +1,6 @@
 import 'dart:convert';
-import 'dart:developer';
 
-import 'package:http/http.dart' as _http;
+import 'package:http/http.dart' as http;
 
 import '../../../../core/constants/api_constants.dart';
 import '../../../../core/exceptions/exceptions.dart';
@@ -26,7 +25,7 @@ class SignInRemoteImpl implements SignInRemote {
 
     final headers = _headerProvider();
 
-    final response = await _http.post(Uri.parse(signInEndpoint),
+    final response = await http.post(Uri.parse(signInEndpoint),
         body: json.encode(signInRequest), headers: headers);
 
     final Map<String, dynamic> map = jsonDecode(response.body);

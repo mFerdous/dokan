@@ -6,12 +6,12 @@ class ErrorMsgRes {
   static const kUserIdRequired = 'sign-in_id_req';
   static const kPasswordRequired = 'sign-in_pass_req';
 
-  static const kNewPasswordRequired = 'new_password_req';
+  static const kNewPasswordRequired = 'type_your_password';
   static const kConfirmPasswordRequired = 'confirm_password_req';
   static const kPasswordShouldChar =
       'Password should at lease one special character';
   static const kPassword8Char = 'set-password_passmin';
-  static const kPasswordNotMatch = 'set-password_passmatch';
+  static const kPasswordNotMatch = 'set_password_not_match';
 
   static const kEmailIdRequired = 'email_id_required';
   static const kMobileNoRequired = 'mobile_no_required';
@@ -24,4 +24,5 @@ class ErrorMsgRes {
   static const kNoMessageFound = 'No message found from server';
   static const kServerError = 'common_server_error';
   static const kPasswordInvalid = 'password_invalid';
+  static const kUserNameRequired = 'username_required';
 }

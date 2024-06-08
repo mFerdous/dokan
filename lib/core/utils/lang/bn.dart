@@ -27,4 +27,7 @@ final bnTranslations = {
   "invalid_email_id": "ত্রুটিপূর্ণ ইমেল আইডি",
   "sign-in_pass_req": "Password required",
   "password_invalid": "Password must be 6 carecter",
+  "username_required": "Username required",
+  "set_password_not_match": "Password not match",
+  "confirm_password_req": "Confirm your password",
 };
